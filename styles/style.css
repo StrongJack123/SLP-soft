@@ -1,0 +1,411 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scrollbar-width: thin;
+}
+
+tspan {
+    font-family: serif;
+}
+*::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: #DDDDDD;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #AAAAAA;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #777777;
+}
+
+:root {
+ height: 100vh;
+}
+
+html, body, #app-content {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+ul {
+    all: revert;
+}
+#Ribbon {
+    height: 158px;
+    font-size: 5px;
+}
+
+#container {
+    height: calc(100% - 150px);
+    width: 100%;
+    padding: 2px 5px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: grid;
+    grid-template-columns: 1fr 5px 4fr 5px 1fr
+}
+
+#left-section, #right-section, #middle-section {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 99.2%;
+    overflow: scroll;
+}
+
+#left-section {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border: 1px solid darkgray;
+}
+
+#middle-section {
+    border: 1px solid darkgray;
+}
+
+#right-section {
+    overflow: hidden;
+}
+
+#pageOptionList {
+    background-color: whitesmoke;
+    border-bottom: 1px solid darkgrey; 
+    width: 100%;
+    height: 25px;
+}
+
+#left-drag-bar {
+    background-color: white;
+    cursor: ew-resize;
+}
+
+#right-drag-bar {
+    background-color: white;
+    cursor: ew-resize;
+}
+.e-btn {
+    text-transform: none;
+}
+
+.flex-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.symbol-text-element {
+    text-align: center; 
+    font-size: 10px; 
+    font-weight: Bold; 
+    line-height: 90%;
+}
+
+.point-circle {
+    transform: scale(0.2, 0.2) translate(10px, 10px);
+}
+
+.list-container ul{
+    list-style: none;
+    padding-left: 30px;
+}
+
+.padding-zero {
+    padding: 0 !important;
+}
+
+#model-container {
+    overflow-x: scroll;
+    font-size: 14px;
+    border: 1px solid darkgrey;
+    height: 50%;
+    margin-bottom: 5px;
+}
+
+#task-list-container {
+    height: calc(50% - 5px);
+    border: 1px solid darkgrey;
+}
+
+.model-list {
+    margin: 0px;
+}
+
+.list-arrow::before{
+    content: "\25B6";
+    color: black;
+    font-size: 11px;
+    display: inline-block;
+}
+
+.list-open::before {
+    transform: rotate(45deg);
+}
+
+.model-list li, .model-button {
+    padding: 5px;
+    height: 40px;
+    min-width:max-content;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.model-list li:hover {
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.nested-list {
+    display: none;
+}
+
+.list-icon {
+    height: 25px;
+    width: 25px;
+    margin: 0 5px;
+}
+
+.page-tab {
+    height: 25px;
+    padding: 5px;
+    border: 1px solid black;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    margin-right: 2px;
+    font-size: 12px;
+    width: calc(max-content);
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+    user-select: none;
+    cursor: pointer;
+}
+
+.button-text {
+    padding-right: 7px;
+    display: inline-flex;
+    align-items: center;
+    height: 25px;
+}
+
+.button-cross::after {
+    content: '\2716';
+    cursor: pointer;
+}
+
+.button-cross:hover {
+    color: crimson;
+}
+.active-model-page {
+    font-size: 13px;
+    font-weight: bolder;
+    background-color: white;
+}
+
+#active-context-menu {
+    padding: 0;
+    height: fit-content;
+}
+.context-list {
+    padding-left: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: left;
+    list-style: none;
+    font-size: 13px;
+    cursor: pointer;
+    user-select: none;
+    height: 30px;
+    min-height: fit-content;
+    display: flex;
+    align-items: center;
+}
+.context-list:hover {
+    background-color: #DDDDDD
+}
+
+.has-open-context-menu {
+    background-color: #DDDDDD;
+}
+
+.other-form {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    margin-top: -50px;
+    margin-right: -125px;
+    border: black solid 1px;
+    height: 120px;
+    width: 250px;
+    background-color: white;
+}
+
+.dialog-title {
+    background-color: #0ab352;
+    width: 100%;
+    font-size: 14px;
+    color: whitesmoke;
+    height: 25px;
+}
+
+.dialog-title > span {
+    line-height: 25px;
+}
+.other-label {
+    display: block;
+    margin-left: 15px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.other-input {
+    margin-left: 15px;
+    margin-top: 5px;
+    font-size: smaller;
+    width: 85%;
+}
+
+.title-text {
+    padding-left: 5px;
+    width: 92%;
+    display: inline-block;
+}
+
+.cross-button {
+    width: 8%;
+    display: inline-block;
+    background-color: rgb(253, 54, 39);
+    text-align: center;
+    user-select: none;
+    line-height: 25px;
+}
+.cross-button:hover {
+    cursor: pointer;
+    background-color: red;
+}
+
+.other-submit {
+    margin-top: 5px;
+    margin-left: 80%;
+    width: 40px;
+    height: 20px;
+}
+
+.disabled-button {
+    background-color: #CCCCCC;
+    color: #777777;
+}
+
+.disabled-button:hover {
+    cursor: default;
+}
+
+.e-btn:not(.e-inputbtn), .e-tbtn, .e-split-btn {
+    font-size: 12px;
+}
+
+.e-menu.e-context {
+    width: 225px;
+}
+
+.e-contextmenu-wrapper ul .e-menu-item, .e-contextmenu-container ul .e-menu-item {
+    height: max-content;
+    line-height: 24px;
+}
+
+#diagram_contextMenu {
+    font-size: 12px;
+    color: #444444;
+}
+
+#subListDiagram {
+    font-size: 12px;
+    color: #444444;
+}
+
+#subListDiagram li {
+    height: max-content;
+    line-height: 24px;
+}
+
+.e-ribbon .e-active-content {
+    z-index: 999;
+}
+
+.grey-onhover:hover {
+    background-color:#EEEEEE;
+    color: #222222;
+}
+
+.hidden {
+    display: none;
+}
+
+#activeDialog {
+    width: 350px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    margin-left: -170px;
+    left: 50%;
+    z-index: 1000;
+}
+
+.dialog-container {
+    width: 330px;
+    max-height: 370px;
+    margin-top: 10px;
+    overflow: scroll;
+    overflow-x: hidden;
+    font-size: smaller !important;
+}
+
+#activeDialog ul {
+    padding-left: 10px;
+}
+
+.btn-primary {
+    background-color: #0ab352;
+}
+
+.btn-primary:hover {
+    background-color: #0ab500;
+}
+.e-ribbon .e-header>.e-apptab .e-menu{
+    background:#0ab352;
+}
+
+.e-ribbon.e-js .e-header .e-active.e-tab a, .e-ribbon.e-js .e-header .e-active.e-contextualtabset a {
+    color: #0ab352;
+}
+
+.e-accordion .e-acrdn-item.e-select.e-selected.e-expand-state > .e-acrdn-header .e-acrdn-header-icon, .e-accordion .e-acrdn-item.e-select.e-selected.e-expand-state > .e-acrdn-header .e-acrdn-header-content, .e-accordion .e-acrdn-item.e-select.e-expand-state > .e-acrdn-header .e-acrdn-header-icon, .e-accordion .e-acrdn-item.e-select.e-expand-state > .e-acrdn-header .e-acrdn-header-content {
+    color: #0ab352;
+}
+
+.e-ribbon.e-js .e-header li.e-select:not(.e-apptab) a:hover {
+    color: #0ab352;
+}
+
+.custom-btn {
+    color: whitesmoke;
+    background-color: #0ab352;
+    margin-top: 7px; display: inline-block; margin-left: calc(100% - 50px);
+    font-size: 12px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.custom-btn:hover {
+    color: white;
+}
